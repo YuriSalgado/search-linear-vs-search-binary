@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/mustard-ui@latest/dist/css/mustard-ui.min.css">
+    <title>Performance and Code comparison - Search Linear vs Search Binary in Javascript</title>
+</head>
+<body>
+    <div class="main">
+        <section class="section-secondary">
+            <div class="container container-small">
+                <p>in</p>
+                <h3 id="size"></h3>
+                <p>search for</p>
+                <h2 id="target"></h2> 
+
+                <div class="time-algorithm">
+                    Linear: 
+                    <span id="linear"></span>
+                    <span>ms</span>
+                </div>
+                <div class="time-algorithm">
+                    Binary:
+                    <span id="binary">ms</span>
+                    <span>ms</span>
+                </div>
+            </div>
+        </section>
+    </div>
+ 
+    <script src="/search-algorithms/binary.js"></script>
+    <script src="/search-algorithms/linear.js"></script>
+    <script type="text/javascript">
+
+        const size = 1000;
+        const round = 5;
+        const target = Math.floor(Math.random() * 900) + 1;
+        let mock = [];
+        
+        document.getElementById("size").textContent = size;
+        document.getElementById("target").textContent = target;
+
+        for (var i = 1; i <= size; i++) {
+            mock.push(i);
+        }
+
+        const timeLinear0 = performance.now();
+        linearSearch(mock, target);
+        const timeLinear1 = performance.now();
+
+        document.getElementById("linear").textContent = (timeLinear1 - timeLinear0).toFixed(round);
+
+        const timeBinary0 = performance.now();
+        binarySearch(mock, target);
+        const timeBinary1 = performance.now();
+
+        document.getElementById("binary").textContent = (timeBinary1 - timeBinary0).toFixed(round);
+        
+    </script>
+</body>
+</html>
