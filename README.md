@@ -1,6 +1,4 @@
 # search-linear-vs-search-binary
-Searching Algorithms: Linear vs Binary
+Com objetivo de demonstrar os dois algoritmo e performance da pesquisa linear vs binary, construi este projeto em javascript e interface dos resultados.
 
-code and performance comparison 
-
-online: https://yurisalgado.github.io/search-linear-vs-search-binary/index.html
+Main online: https://yurisalgado.github.io/search-linear-vs-search-binary/index.html
